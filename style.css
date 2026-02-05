@@ -7,24 +7,30 @@
 
 /* 1. Global Reset & Variables */
 :root {
-    --primary-color: #007bff; /* Professional Blue */
+    --primary-color: #007bff;
+    /* Professional Blue */
     --primary-hover: #0056b3;
-    --secondary-color: #6c757d; /* Grey/Accent */
-    
+    --secondary-color: #6c757d;
+    /* Grey/Accent */
+
     /* Light Theme Base */
     --background-light: #f4f7f6;
     --text-color-light: #333;
     --card-bg-light: #ffffff;
-    --hero-gradient-start: #f4f7f6; /* Used by Hero */
-    --hero-gradient-end: #e0eafc;   /* Used by Hero */
-    
+    --hero-gradient-start: #f4f7f6;
+    /* Used by Hero */
+    --hero-gradient-end: #e0eafc;
+    /* Used by Hero */
+
     /* Dark Theme Base */
     --background-dark: #2c3e50;
     --text-color-dark: #ecf0f1;
     --card-bg-dark: #34495e;
-    --hero-gradient-start-dark: #2c3e50; /* Used by Dark Hero */
-    --hero-gradient-end-dark: #1c2a37;   /* Used by Dark Hero */
-    
+    --hero-gradient-start-dark: #2c3e50;
+    /* Used by Dark Hero */
+    --hero-gradient-end-dark: #1c2a37;
+    /* Used by Dark Hero */
+
     --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.1);
     --radius-lg: 12px;
     --transition-speed: 0.3s;
@@ -40,8 +46,8 @@
     /* Card/Header Backgrounds */
     --card-bg-light: var(--card-bg-dark);
     /* Hero Gradient Colors (They now use the dark values) */
-    --hero-gradient-start: var(--hero-gradient-start-dark); 
-    --hero-gradient-end: var(--hero-gradient-end-dark);     
+    --hero-gradient-start: var(--hero-gradient-start-dark);
+    --hero-gradient-end: var(--hero-gradient-end-dark);
     /* Shadow adjustment for contrast */
     --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
@@ -60,10 +66,12 @@ html {
 body {
     font-family: var(--font-family);
     line-height: 1.6;
-    color: var(--text-color-light); /* Will be dark or light based on .dark-mode */
-    background-color: var(--background-light); /* Will be dark or light based on .dark-mode */
+    color: var(--text-color-light);
+    /* Will be dark or light based on .dark-mode */
+    background-color: var(--background-light);
+    /* Will be dark or light based on .dark-mode */
     transition: background-color var(--transition-speed), color var(--transition-speed);
-    
+
     /* Sticky Footer Setup */
     display: flex;
     flex-direction: column;
@@ -80,10 +88,13 @@ main {
     margin: 0 auto;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     margin-bottom: 0.5em;
     font-weight: 600;
-    transition: color var(--transition-speed); /* Ensure smooth color transition */
+    transition: color var(--transition-speed);
+    /* Ensure smooth color transition */
 }
 
 a {
@@ -123,6 +134,7 @@ header {
     list-style: none;
     display: flex;
 }
+
 .nav-menu ul li {
     margin-left: 25px;
 }
@@ -154,7 +166,8 @@ header {
     width: 100%;
 }
 
-.hamburger, .dark-mode-toggle {
+.hamburger,
+.dark-mode-toggle {
     background: none;
     border: none;
     font-size: 1.5rem;
@@ -164,12 +177,15 @@ header {
 }
 
 /* A11y: Focus and hover state for controls */
-.dark-mode-toggle:hover, .hamburger:hover {
+.dark-mode-toggle:hover,
+.hamburger:hover {
     color: var(--primary-color);
 }
-.dark-mode-toggle:focus-visible, .hamburger:focus-visible {
+
+.dark-mode-toggle:focus-visible,
+.hamburger:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); 
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
     border-radius: 4px;
 }
 
@@ -177,12 +193,14 @@ header {
     display: flex;
     align-items: center;
 }
+
 .dark-mode-toggle {
     margin-right: 15px;
 }
 
 .hamburger {
-    display: none; /* Hidden on desktop */
+    display: none;
+    /* Hidden on desktop */
 }
 
 /* 4. Hero Section */
@@ -209,8 +227,8 @@ header {
 
 .hero-text {
     flex: 1;
-    padding-right: 40px; 
-    text-align: left; 
+    padding-right: 40px;
+    text-align: left;
 }
 
 .hero-content-grid h1 {
@@ -218,7 +236,8 @@ header {
     margin-bottom: 0.25em;
 }
 
-.hero-text h2 { /* Targeting the new H2 headline element */
+.hero-text h2 {
+    /* Targeting the new H2 headline element */
     font-size: 1.5rem;
     color: var(--secondary-color);
     margin-bottom: 2em;
@@ -246,23 +265,23 @@ header {
     flex: 1;
     max-width: 450px;
     display: flex;
-    justify-content: flex-end; 
+    justify-content: flex-end;
     align-items: center;
 }
 
 .profile-image {
     width: 350px;
     height: 350px;
-    object-fit: cover; 
+    object-fit: cover;
     border-radius: 50%;
     /* FIX: Use variable for border color to ensure it flips in dark mode */
-    border: 8px solid var(--card-bg-light); 
+    border: 8px solid var(--card-bg-light);
     box-shadow: 0 10px 30px rgba(0, 123, 255, 0.4);
-    
+
     /* Initial state for the cool animation (JS controlled) */
-    opacity: 0; 
-    transform: scale(0.8) rotate(15deg); 
-    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55); 
+    opacity: 0;
+    transform: scale(0.8) rotate(15deg);
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
 .is-visible .profile-image {
@@ -320,7 +339,7 @@ header {
     top: 0;
     bottom: 0;
     left: 50%;
-    margin-left: -2px; 
+    margin-left: -2px;
     z-index: 0;
 }
 
@@ -345,15 +364,16 @@ header {
 /* Year Label (Desktop only) */
 .timeline-year {
     position: absolute;
-    top: 25px; 
+    top: 25px;
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--primary-color);
-    background-color: var(--background-light); /* Uses background var that flips in dark mode */
-    padding: 2px 8px; 
+    background-color: var(--background-light);
+    /* Uses background var that flips in dark mode */
+    padding: 2px 8px;
     border-radius: 4px;
-    z-index: 10; 
-    transition: background-color var(--transition-speed), color var(--transition-speed); 
+    z-index: 10;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
 /* REMOVED: Original redundant dark mode override: 
@@ -364,14 +384,14 @@ header {
 
 /* Position Year for Left Items (Odd) */
 .timeline-item:nth-child(odd) .timeline-year {
-    right: -10px; 
-    transform: translateX(100%); 
+    right: -10px;
+    transform: translateX(100%);
 }
 
 /* Position Year for Right Items (Even) */
 .timeline-item:nth-child(even) .timeline-year {
-    left: -10px; 
-    transform: translateX(-100%); 
+    left: -10px;
+    transform: translateX(-100%);
 }
 
 /* Content on the Right Side (Even items) */
@@ -379,6 +399,7 @@ header {
     left: 50%;
     padding-left: 60px;
 }
+
 .timeline-item:nth-child(even) .timeline-dot {
     left: -7.5px;
 }
@@ -387,8 +408,9 @@ header {
 .timeline-item:nth-child(odd) {
     left: 0;
     padding-right: 60px;
-    text-align: right; 
+    text-align: right;
 }
+
 .timeline-item:nth-child(odd) .timeline-dot {
     right: -7.5px;
 }
@@ -408,6 +430,7 @@ header {
     border-left-color: var(--card-bg-light);
     right: -20px;
 }
+
 /* Removed original redundant dark mode override: 
 .dark-mode .timeline-item:nth-child(odd) .timeline-content::after {
     border-left-color: var(--card-bg-dark);
@@ -419,6 +442,7 @@ header {
     border-right-color: var(--card-bg-light);
     left: -20px;
 }
+
 /* Removed original redundant dark mode override: 
 .dark-mode .timeline-item:nth-child(even) .timeline-content::after {
     border-right-color: var(--card-bg-dark);
@@ -433,7 +457,7 @@ header {
     box-shadow: var(--shadow-soft);
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color var(--transition-speed);
-    text-align: left; 
+    text-align: left;
 }
 
 .timeline-content:hover {
@@ -445,18 +469,18 @@ header {
     color: var(--primary-color);
     margin-top: 0;
     margin-bottom: 5px;
-    font-size: 1.25rem; 
+    font-size: 1.25rem;
 }
 
 .timeline-content .duration-info {
     font-style: italic;
     color: var(--secondary-color);
     margin-bottom: 15px;
-    display: block; 
+    display: block;
 }
 
 .timeline-content .mobile-year {
-    display: none; 
+    display: none;
     font-weight: 700;
     color: var(--primary-color);
     margin-bottom: 5px;
@@ -465,7 +489,7 @@ header {
 
 .timeline-content ul {
     list-style-type: none;
-    padding-left: 0; 
+    padding-left: 0;
 }
 
 .timeline-content ul li {
@@ -475,13 +499,14 @@ header {
 }
 
 .timeline-content ul li::before {
-    content: "\f058"; 
+    content: "\f058";
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     color: var(--primary-color);
     position: absolute;
     left: 0;
-    top: 0.25rem; /* Adjusted for better text alignment */
+    top: 0.25rem;
+    /* Adjusted for better text alignment */
     font-size: 0.8em;
 }
 
@@ -566,6 +591,10 @@ header {
     transition: background-color var(--transition-speed);
 }
 
+.project-details {
+    padding: 20px;
+}
+
 /* 9. Research Section (NEW) */
 .research-grid {
     display: grid;
@@ -605,6 +634,7 @@ header {
     font-size: 1.15rem;
     color: var(--secondary-color);
 }
+
 .learn-grid {
     /* Overrides .skills-grid default to allow 4 smaller cards */
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -637,8 +667,9 @@ header {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 8px; 
-    background-color: var(--background-light); /* Light background for inputs even in light mode */
+    border-radius: 8px;
+    background-color: var(--background-light);
+    /* Light background for inputs even in light mode */
     color: var(--text-color-light);
     transition: border-color var(--transition-speed), box-shadow var(--transition-speed), background-color var(--transition-speed), color var(--transition-speed);
     font-family: var(--font-family);
@@ -655,7 +686,7 @@ header {
 /* Dark Mode Input Fix (FIX: Ensuring high contrast and appropriate border) */
 .dark-mode .form-group input,
 .dark-mode .form-group textarea {
-    background-color: #3f5168; 
+    background-color: #3f5168;
     border: 1px solid #4a6078;
     color: var(--text-color-dark);
 }
@@ -676,7 +707,8 @@ header {
 
 /* 12. Footer */
 footer {
-    background-color: var(--card-bg-dark); /* Uses card-bg-dark for better consistency */
+    background-color: var(--card-bg-dark);
+    /* Uses card-bg-dark for better consistency */
     color: white;
     padding: 25px 0;
     transition: background-color var(--transition-speed);
@@ -715,13 +747,16 @@ footer {
 
 /* 14. Responsive Design (Media Queries) */
 @media (max-width: 992px) {
+
     /* Larger tablets/small desktops adjustments */
     .hero-content-grid h1 {
         font-size: 3rem;
     }
+
     .hero-text h2 {
         font-size: 1.3rem;
     }
+
     .profile-image {
         width: 300px;
         height: 300px;
@@ -729,19 +764,21 @@ footer {
 }
 
 @media (max-width: 768px) {
-    
+
     /* General Mobile */
     .section {
         padding: 60px 0;
     }
+
     .hero-section {
         min-height: 70vh;
     }
 
     /* Navigation (FIX: Using 'fixed' ensures full coverage and stability on mobile) */
     .nav-menu {
-        position: fixed; 
-        top: 60px; /* Placeholder, rely on JS to calculate header height for robust solution */
+        position: fixed;
+        top: 60px;
+        /* Placeholder, rely on JS to calculate header height for robust solution */
         left: 0;
         width: 100%;
         background-color: var(--card-bg-light);
@@ -749,7 +786,8 @@ footer {
         transform: translateX(-100%);
         transition: transform 0.3s ease-in-out, background-color var(--transition-speed), box-shadow var(--transition-speed);
         flex-direction: column;
-        z-index: 1001; /* Ensure it's above the sticky header (z-index: 1000) */
+        z-index: 1001;
+        /* Ensure it's above the sticky header (z-index: 1000) */
         height: 100vh;
         overflow-y: auto;
     }
@@ -777,7 +815,7 @@ footer {
         display: block;
         padding: 15px 25px;
     }
-    
+
     .nav-menu ul li a::after {
         content: none;
     }
@@ -814,7 +852,7 @@ footer {
 
     /* Timeline Mobile Adjustments (All content is now correctly consolidated on the right of the line) */
     .timeline-container::after {
-        left: 20px; 
+        left: 20px;
     }
 
     .timeline-item {
@@ -838,21 +876,21 @@ footer {
         left: 12.5px;
         right: auto;
     }
-    
+
     .timeline-year {
-        display: none; 
+        display: none;
     }
-    
+
     /* Hide the arrow on mobile (since all content is on one side) */
     .timeline-content::after {
         border: none;
     }
-    
+
     /* Show the mobile year element instead */
     .timeline-content .mobile-year {
-        display: block; 
+        display: block;
     }
-    
+
     /* Footer */
     .footer-content {
         flex-direction: column;
