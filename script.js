@@ -172,4 +172,293 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-});
+    // --- 5. Paper Airplane Animation ---
+    const techBtn = document.getElementById('tech-projects-btn');
+    const paperAirplane = document.getElementById('paper-airplane');
+    const projectsNavLink = document.getElementById('nav-projects-link');
+
+    if (techBtn && paperAirplane && projectsNavLink) {
+        // Register the plugin if available
+        if (typeof gsap !== 'undefined' && typeof MotionPathPlugin !== 'undefined') {
+            gsap.registerPlugin(MotionPathPlugin);
+
+            techBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                // 2. Get Coordinates
+                const btnRect = techBtn.getBoundingClientRect();
+                const navRect = projectsNavLink.getBoundingClientRect();
+
+                // Calculate start and end points relative to the viewport
+                // We want to center the airplane on the button initially
+                const startX = btnRect.left + btnRect.width / 2;
+                const startY = btnRect.top + btnRect.height / 2;
+
+                const endX = navRect.left + navRect.width / 2;
+                const endY = navRect.top + navRect.height / 2;
+
+                // 3. Prepare Airplane
+                // Position it at the button center initially
+                // Note: using fixed position in CSS, so x/y correspond to viewport coordinates
+                gsap.set(paperAirplane, {
+                    x: startX,
+                    y: startY,
+                    scale: 0.1, // Start small
+                    opacity: 0,
+                    display: 'block',
+                    rotation: 0 // Reset rotation
+                });
+
+                // 4. Create Flight Path
+                const tl = gsap.timeline({
+                    onComplete: () => {
+                        window.location.href = techBtn.getAttribute('href');
+                    }
+                });
+
+                // Quadratic Bezier Control Point
+                // Calculate a control point that creates a nice arc
+                // Midpoint X, but significantly higher Y (or lower Y value for screen top)
+                const controlX = (startX + endX) / 2;
+                // Go higher than the highest point (min Y)
+                const controlY = Math.min(startY, endY) - 150; 
+
+                // --- Morph Effect Step ---
+                const btnText = techBtn.querySelector('.btn-text');
+                
+                // Group the morphing animations for a tighter, snapier feel
+                tl.to(btnText, { 
+                    opacity: 0, 
+                    duration: 0.1, // Faster fade
+                    ease: "power1.out"
+                }, "start")
+                
+                .to(techBtn, {
+                    scale: 0, // Shrink to nothing
+                    opacity: 0,
+                    duration: 0.3, // Faster shrink
+                    ease: "back.in(2)" // More anticipation
+                }, "start") // Start immediately with text fade
+                
+                .to(paperAirplane, {
+                    scale: 1,
+                    opacity: 1,
+                    duration: 0.4,
+                    ease: "elastic.out(1, 0.5)" // Snappy pop
+                }, "start+=0.15") // Overlap slightly with button disappearance
+
+                // --- Flight Step ---
+                .to(paperAirplane, {
+                    duration: 0.8, // Faster flight
+                    motionPath: {
+                        path: [
+                            { x: startX, y: startY },
+                            { x: controlX, y: controlY },
+                            { x: endX, y: endY }
+                        ],
+                        curviness: 1.5,
+                        autoRotate: true
+                    },
+                    scale: 1.2, 
+                    ease: "power2.inOut",
+                }, "-=0.2") 
+                
+                // 5. Shrink/Fade out at the end
+                .to(paperAirplane, {
+                    duration: 0.2,
+                    scale: 0.1,
+                    opacity: 0,
+                    ease: "power1.out"
+                }, "-=0.1")
+
+                // 6. Target Pulse
+                .add(() => {
+                    projectsNavLink.classList.add('nav-target-pulse');
+                }, "-=0.1"); 
+            });
+        } else {
+             // Fallback if GSAP fails to load
+            techBtn.addEventListener('click', () => {
+                window.location.href = techBtn.getAttribute('href');
+            });
+        }
+    }
+
+});    // --- 6. Interactive Contact Button (Restored) ---
+    const contactBtnWrapper = document.getElementById('contactBtnWrapper');
+    const interactiveBtn = document.getElementById('interactiveSubmitBtn');
+    const characterContainer = document.getElementById('characterContainer');
+    const btnTextContent = interactiveBtn ? interactiveBtn.querySelector('.btn-text-content') : null;
+    
+    // Character Elements
+    const avatarIdle = document.querySelector('.avatar-idle');
+    const avatarRun = document.querySelector('.avatar-run');
+    const avatarSuccess = document.querySelector('.avatar-success');
+
+    if (interactiveBtn && characterContainer && avatarIdle) {
+
+        // A. Eye Tracking (Mouse Move Effect)
+        // Only apply if not currently animating
+        contactBtnWrapper.addEventListener('mousemove', (e) => {
+            if (interactiveBtn.classList.contains('sending') || interactiveBtn.classList.contains('sent')) return;
+
+            const rect = contactBtnWrapper.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+
+            // Calculate rotation based on cursor position relative to center
+            // Limit rotation to +/- 15 degrees
+            const rotateY = ((mouseX - centerX) / (rect.width / 2)) * 15;
+            const rotateX = -((mouseY - centerY) / (rect.height / 2)) * 15;
+
+            characterContainer.style.transform = `translateY(-50%) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        // Reset on mouse leave
+        contactBtnWrapper.addEventListener('mouseleave', () => {
+             if (interactiveBtn.classList.contains('sending') || interactiveBtn.classList.contains('sent')) return;
+             characterContainer.style.transform = 'translateY(-50%) rotateX(0) rotateY(0)';
+        });
+
+        // B. Click / Submission Logic
+        interactiveBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // Prevent multiple clicks
+            if (interactiveBtn.classList.contains('sending') || interactiveBtn.classList.contains('sent')) return;
+
+            // Start Animation
+            interactiveBtn.classList.add('sending');
+            
+            // 1. Swap Avatar to Run
+            avatarIdle.style.transition = 'opacity 0.2s ease-out';
+            avatarIdle.style.opacity = '0'; 
+            
+            avatarRun.style.display = 'block';
+            avatarRun.style.opacity = '0';
+            avatarRun.style.transition = 'opacity 0.1s ease-in';
+            
+            // Short delay to ensure display block is registered
+            requestAnimationFrame(() => {
+                avatarRun.style.opacity = '1';
+                
+                // Add forward tilt for "speed"
+                gsap.to(characterContainer, {
+                    rotation: 15,
+                    duration: 0.2,
+                    ease: "power1.out"
+                });
+            });
+
+            // 2. Animate Run across button (Speed: 0.8s)
+            const btnWidth = interactiveBtn.offsetWidth;
+            const travelDist = btnWidth - 60; 
+
+            if (typeof gsap !== 'undefined') {
+                gsap.to(characterContainer, {
+                    x: travelDist,
+                    duration: 0.8,
+                    ease: "power2.inOut", 
+                    onComplete: () => {
+                        // Reset rotation when stopping
+                        gsap.to(characterContainer, {
+                            rotation: 0,
+                            duration: 0.2
+                        });
+                        finishAnimation();
+                    }
+                });
+            } else {
+                // Fallback
+                characterContainer.style.transition = 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                characterContainer.style.transform = `translate(${travelDist}px, -50%) rotate(15deg)`;
+                setTimeout(() => {
+                    characterContainer.style.transform = `translate(${travelDist}px, -50%) rotate(0deg)`;
+                    finishAnimation();
+                }, 800);
+            }
+
+            function finishAnimation() {
+                // 3. Success State
+                interactiveBtn.classList.remove('sending');
+                interactiveBtn.classList.add('sent');
+
+                // Swap Avatar to Success
+                avatarRun.style.opacity = '0';
+                
+                requestAnimationFrame(() => {
+                    avatarRun.style.display = 'none';
+                    avatarSuccess.style.display = 'block';
+                    avatarSuccess.style.opacity = '0';
+
+                    // Pop effect
+                    gsap.fromTo(avatarSuccess, 
+                        { scale: 0.5, opacity: 0 }, 
+                        { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(1.7)" }
+                    );
+                });
+
+                // Change Text
+                if (btnTextContent) {
+                    btnTextContent.textContent = "Message Sent! ✅";
+                    btnTextContent.style.opacity = '1';
+                }
+
+                // Send Email via EmailJS
+                const form = document.getElementById('emailForm');
+                if (form && typeof emailjs !== 'undefined') {
+                    // Get form data
+                    const formData = new FormData(form);
+                    const templateParams = {
+                        from_name: formData.get('Name'),
+                        subject: formData.get('Subject'),
+                        message: formData.get('Body'),
+                        reply_to: 'mr.dipesh333@gmail.com' // Your email to receive replies
+                    };
+
+                    // Send email using EmailJS
+                    // NOTE: You need to replace these with your actual EmailJS credentials
+                    emailjs.send(
+                        'service_sivyejp',      // Replace with your EmailJS Service ID
+                        'template_mey4gab',     // Replace with your EmailJS Template ID
+                        templateParams,
+                        'k3oWWZIRE4OopChrj'       // Replace with your EmailJS Public Key
+                    ).then(
+                        function(response) {
+                            console.log('Email sent successfully!', response.status, response.text);
+                            // Form will reset after timeout below
+                        },
+                        function(error) {
+                            console.error('Email sending failed:', error);
+                            if (btnTextContent) {
+                                btnTextContent.textContent = "Failed! Try again";
+                            }
+                        }
+                    );
+                }
+
+                // Reset after 4 seconds
+               setTimeout(() => {
+                   if (btnTextContent) btnTextContent.textContent = "Send Message";
+                   interactiveBtn.classList.remove('sent');
+                   
+                   // Reset avatars
+                   avatarSuccess.style.display = 'none';
+                   avatarIdle.style.display = 'block';
+                   avatarIdle.style.opacity = '1';
+                   
+                   // Reset form
+                   if (form) form.reset();
+                   
+                   // Reset transform
+                   characterContainer.style.transform = 'translateY(-50%)';
+                   if (typeof gsap !== 'undefined') {
+                       gsap.set(characterContainer, { x: 0, rotation: 0 });
+                   }
+               }, 4000);
+            }
+        });
+    }
