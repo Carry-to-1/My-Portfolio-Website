@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dipesh Kharel - Developer & Engineer</title>
+
+    <meta name="description"
+        content="Portfolio of Dipesh Kharel, showcasing a journey from Civil Engineering to Information Technology and web development.">
+    <meta name="author" content="Dipesh Kharel">
+
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        // Check local storage for dark mode preference immediately
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+</head>
+
+<body>
+
+    <header id="mainHeader">
+        <div class="container nav-content">
+            <a href="#home" class="logo">Dipesh Kharel</a>
+            <nav class="nav-menu" id="navMenu">
+                <ul role="list">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="research.html" class="nav-link">Research</a></li>
+                    <li><a href="learn.html" class="nav-link">Learn</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-controls">
+                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode" type="button">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Open mobile menu" type="button">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <main>
+            <section id="home" class="hero-section">
+                <div class="container hero-content-grid">
+                    <div class="hero-text animate-in">
+                        <h1>Hi, I'm Dipesh Kharel</h1>
+                        <h2>Developer | Independent Researcher | Jr. Engineer</h2>
+                        <a href="projects.html" class="cta-button">View My Tech Projects</a>
+                    </div>
+                    <div class="hero-image-container animate-in">
+                        <picture>
+                            <img src="profile.JPG" alt="Dipesh Kharel Professional Portrait" class="profile-image"
+                                loading="eager">
+                        </picture>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="section">
+                <div class="container">
+                    <h2 class="section-title animate-in">About Me</h2>
+                    <div class="about-content animate-in">
+                        <p>I am a highly motivated individual with a unique background spanning both civil engineering
+                            and
+                            modern information technology. Currently pursuing a Bachelor of Technical Education in
+                            Information Technology at Kathmandu University, I am passionate about leveraging code to
+                            build
+                            dynamic, user-friendly web applications.</p>
+                        <p>My past experience in engineering has provided me with a strong foundation in project
+                            management,
+                            problem-solving, and attention to detail. I am now channeling these skills into my passion
+                            for
+                            web development, with a growing expertise in the MERN stack (MongoDB, Express.js,
+                            React/Next.js,
+                            Node.js) and a drive to create efficient and impactful digital solutions.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience" class="section experience-section bg-light">
+                <div class="container">
+                    <h2 class="section-title animate-in">Hands-On Experience</h2>
+                    <div class="timeline-container animate-in">
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <span class="timeline-year">2023</span>
+                            <div class="timeline-content card">
+                                <span class="mobile-year">2023</span>
+                                <h3>Practical Training: Road & Culvert Survey</h3>
+                                <p class="company duration-info">In-School Training (3 Months)</p>
+                                <ul>
+                                    <li>Conducted comprehensive road alignment and topographical surveys using Leveling
+                                        Instruments and Theodolite.</li>
+                                    <li>Performed Culvert Survey and Estimation to ensure accurate drainage planning and
+                                        quantity takeoff.</li>
+                                    <li>Created detailed Road Estimation reports, contributing to the initial project
+                                        planning phase.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <span class="timeline-year">2024</span>
+                            <div class="timeline-content card">
+                                <span class="mobile-year">2024</span>
+                                <h3>Practical Training: Quantity Estimating & Costing</h3>
+                                <p class="company duration-info">In-School Training (3 Months)</p>
+                                <ul>
+                                    <li>Calculated precise material and labor costs through Quantity Estimation for
+                                        various
+                                        building projects.</li>
+                                    <li>Developed skills in efficient resource planning and budgetary control for
+                                        medium-scale structures.</li>
+                                    <li>Role was focused on technical analysis of construction drawings to derive
+                                        accurate
+                                        financial projections.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <span class="timeline-year">2025</span>
+                            <div class="timeline-content card">
+                                <span class="mobile-year">2025</span>
+                                <h3>Professional OJT: Valuation & Drafting</h3>
+                                <p class="company duration-info">Ranimahal Engineering Consultancy, Butwal (6 Months)
+                                </p>
+                                <ul>
+                                    <li>Conducted property surveys and detailed valuations for residential and
+                                        commercial
+                                        buildings.</li>
+                                    <li>Utilized AutoCAD extensively for architectural drafting and creation of
+                                        professional
+                                        valuation maps.</li>
+                                    <li>Contributed to official reports, performing data analysis to support property
+                                        appraisal decisions.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="section skills-section">
+                <div class="container">
+                    <h2 class="section-title animate-in">Technical Skills</h2>
+                    <div class="skills-grid animate-in">
+
+                        <div class="skill-card">
+                            <i class="fas fa-code icon-lg"></i>
+                            <h3>Web Development</h3>
+                            <p>HTML, CSS, JavaScript, Next.js, Node.js, Express.js, MongoDB.</p>
+                        </div>
+
+                        <div class="skill-card">
+                            <i class="fas fa-drafting-compass icon-lg"></i>
+                            <h3>Engineering & Design</h3>
+                            <p>AutoCAD (2D), SketchUp, Quantity Estimation, Valuation.</p>
+                        </div>
+
+                        <div class="skill-card">
+                            <i class="fas fa-tools icon-lg"></i>
+                            <h3>Tools & Technologies</h3>
+                            <p>Git, GitHub, VS Code, C, Postman, MS Excel.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="section contact-section">
+                <div class="container">
+                    <h2 class="section-title animate-in">Get In Touch</h2>
+                    <form class="contact-form animate-in" action="mailto:mr.dipesh333@gmail.com" method="post"
+                        enctype="text/plain" id="emailForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="Name" placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="Subject"
+                                placeholder="Briefly state your query or proposal" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="Body" rows="7"
+                                placeholder="Write your detailed message here..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="cta-button submit-button">Send Email</button>
+
+                        <p class="form-note">
+                            This button will open your default email application. You can also email me directly at:
+                            <strong>mr.dipesh333@gmail.com</strong>
+                        </p>
+                    </form>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <div class="container footer-content">
+                <p>&copy; 2024 Dipesh Kharel. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="GitHub profile"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="Twitter profile"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+</body>
+
+</html>
