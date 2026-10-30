@@ -2,231 +2,345 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dipesh Kharel - Developer & Engineer</title>
 
-    <meta name="description"
-        content="Portfolio of Dipesh Kharel, showcasing a journey from Civil Engineering to Information Technology and web development.">
-    <meta name="author" content="Dipesh Kharel">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Dipesh Kharel's Homepage">
+  <meta name="author" content="Dipesh Kharel">
 
-    <link rel="icon" type="image/png" href="favicon.png">
+  <title>Dipesh Kharel's Homepage</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="style.css">
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  
+  <!-- Custom styles for this template (Same to Same as Mengjia Yan's CSAIL Homepage) -->
+  <link href="css/style.css" rel="stylesheet">
 
-    <script>
-        // Check local storage for dark mode preference immediately
-        if (localStorage.getItem('darkMode') === 'enabled') {
-            document.documentElement.classList.add('dark-mode');
-        }
-    </script>
 </head>
 
-<body>
+<body id="page-top">
 
-    <header id="mainHeader">
-        <div class="container nav-content">
-            <a href="#home" class="logo">Dipesh Kharel</a>
-            <nav class="nav-menu" id="navMenu">
-                <ul role="list">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#experience" class="nav-link">Experience</a></li>
-                    <li><a href="#skills" class="nav-link">Skills</a></li>
-                    <li><a href="projects.html" class="nav-link">Projects</a></li>
-                    <li><a href="research.html" class="nav-link">Research</a></li>
-                    <li><a href="learn.html" class="nav-link">Learn</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="nav-controls">
-                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode" type="button">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <button class="hamburger" id="hamburger" aria-label="Open mobile menu" type="button">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
+  <!-- ======================================================================
+       NAVIGATION SIDEBAR (Exact StartBootstrap Resume structure)
+       ====================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-block d-lg-none">Dipesh Kharel</span>
+      <span class="d-none d-lg-block">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="Assets/profile.JPG" alt="Dipesh Kharel">
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#blogs">Blogs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#teaching">Teaching</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#publications">Publications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#service">Service</a>
+        </li>
+        <br>
+        <li class="nav-item">
+          <a class="nav-link" href="Assets/CV.pdf" target="_blank">Curriculum Vitae</a>
+        </li>
+      </ul>
+    </div>
+    
+  </nav>
+
+  <!-- ======================================================================
+       MAIN CONTENT CONTAINER
+       ====================================================================== -->
+  <div class="container-fluid p-0">
+
+    <!-- ====================================================================
+         SECTION: ABOUT
+         ==================================================================== -->
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
+      <div class="w-100">
+        <h1 class="mb-3">Dipesh
+          <span class="text-primary">Kharel</span>
+        </h1>
+        <div class="subheading mb-5">
+            Undergraduate Researcher &middot; Kathmandu University <br>
+            Tilottama-5, Rupandehi, Nepal <br> 
+            <a class="disabled">mr.dipesh333@gmail.com</a> 
         </div>
-        <main>
-            <section id="home" class="hero-section">
-                <div class="container hero-content-grid">
-                    <div class="hero-text animate-in">
-                        <h1>Hi, I'm Dipesh Kharel</h1>
-                        <h2>Developer | Independent Researcher | Jr. Engineer</h2>
-                        <a href="projects.html" class="cta-button">View My Tech Projects</a>
-                    </div>
-                    <div class="hero-image-container animate-in">
-                        <picture>
-                            <img src="profile.JPG" alt="Dipesh Kharel Professional Portrait" class="profile-image"
-                                loading="eager">
-                        </picture>
-                    </div>
+        <p class="lead mb-5">
+        I am an undergraduate student studying <a href="https://github.com/Carry-to-1/B-Tech-Ed-IT" target="_blank" title="B Tech Ed. IT">B Tech Ed. IT</a> at Kathmandu University (Radiant College).
+        My research interest lies in the areas of 
+        <strong>operating systems, computer architecture, and secure &amp; trustworthy systems</strong>,
+        with a focus on hardware/software interfaces and low-level system vulnerabilities.
+        <br><br>
+        I have completed rigorous online coursework from top institutions including 
+        <strong>MIT 6.S081</strong> (Operating System Engineering), 
+        <strong>MIT 6.033</strong> (Computer Systems Engineering), 
+        <strong>CMU CS15-213</strong> (Computer Systems: A Programmer's Perspective), 
+        and <strong>UC Berkeley CS61C</strong> (Computer Architecture).
+        Before joining KU, I completed my <a href="https://github.com/Carry-to-1/B-Tech-Ed-IT" target="_blank" title="Vocational & Technical Education in Civil Engineering">Vocational & Technical Education in Civil Engineering</a> (Grades 9&ndash;12) at Pharsatikar Secondary School, Nepal.
+        You can access my Curriculum Vitae <a href="Assets/CV.pdf" target="_blank">here</a>.
+        </p>
+
+        <div class="resume-content">
+        <strong>I am actively seeking research mentorship, graduate opportunities, and collaborations in computer systems and architecture security:</strong>
+        <ul>
+          <li><strong>Systems &amp; OS Security:</strong> Kernel design, xv6 enhancements, virtual memory, and hardware-assisted isolation.</li>
+          <li><strong>Architecture:</strong> Micro-architectural side-channels, transient execution security, and cache timing analysis.</li>
+          <li><strong>Background:</strong> C/C++, Rust, Assembly, Python, Linux kernel internals, and low-level debugging (GDB).</li>
+        </ul><br>
+        </div>
+
+        <div class="social-icons">
+          <a href="https://scholar.google.com/" target="_blank" title="Google Scholar">
+            <i class="ai ai-google-scholar"></i>
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/Carry-to-1" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="Assets/CV.pdf" target="_blank" title="CV / Resume">
+            <i class="fa-solid fa-file-pdf"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <!-- ====================================================================
+         SECTION: NEWS
+         ==================================================================== -->
+    <section class="resume-section-short p-3 p-lg-5 d-flex justify-content-center" id="news">
+      <div class="w-100"> 
+        <h2 class="mb-5">News</h2>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <ul>
+              <li> 10/2026: Launched my personal academic and research homepage. </li>
+              <li> 09/2026: Completed extensive implementation and analysis of xv6 Operating System Engineering labs (MIT 6.S081). </li>
+              <li> 10/2025: Began Bachelor of Technical Education in IT at Kathmandu University (Radiant College). </li>
+              <li> 05/2025: Completed Sub-Engineer tenure at Ranimahal Engineering Consultancy. </li>
+              <br>
+              <a data-toggle="collapse" href="#old-news" role="button" aria-expanded="false" aria-controls="old-news">
+                &gt;&gt; older news...
+              </a>
+              <div class="collapse" id="old-news">
+                <li> 02/2025: Graduated Technical Secondary Education in Civil Engineering (PCM + Engineering) with Grade 12 GPA 3.50/4.00 (Top 3 in Class). </li>
+                <li> 2024: Served as Teaching Assistant for RCC Structure and Physics at Pharsatikar Secondary School. </li>
+                <li> 2023: Led road &amp; culvert leveling surveys as Head Surveyor during technical OJT. </li>
+              </div>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <!-- ====================================================================
+         SECTION: STUDENTS & MENTORING
+         ==================================================================== -->
+    <section class="resume-section-short p-3 p-lg-5 d-flex justify-content-center" id="students">
+      <div class="w-100"> 
+        <h2 class="mb-5">Students &amp; Mentoring</h2>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <strong>Tutoring &amp; Mentees:</strong>
+            <ul>
+              <li> Home Tutor (Grades 9&ndash;10, Tilottama-5, Rupandehi, 2026) &ndash; Mentored students in Science and Mathematics. </li>
+              <li> Private Tutor (Grade 10, Sudhodhan-4, 2025) &ndash; Coached students in Optional Mathematics for examination success. </li>
+              <li> Community STEM Tutor (Grades 1&ndash;8, 2020&ndash;2022) &ndash; Tutored 30+ students across STEM subjects in the locality. </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <!-- ====================================================================
+         SECTION: TEACHING
+         ==================================================================== -->
+    <section class="resume-section-short p-3 p-lg-5 d-flex justify-content-center" id="teaching">
+      <div class="w-100"> 
+        <h2 class="mb-5">Teaching</h2>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <ul>
+              <li>
+                <strong>TA: RCC Structure (Grade 12)</strong>, Pharsatikar Secondary School, 2024.<br>
+                Instructor: Er. Dipesh Ghimire
+              </li>
+              <li>
+                <strong>TA: Physics (Grade 11&ndash;12)</strong>, Pharsatikar Secondary School, 2023&ndash;2024.<br>
+                Instructor: Suresh Poudel
+              </li>
+              <li>
+                <strong>TA: Fluid Mechanics (Grade 12)</strong>, Pharsatikar Secondary School, 2024.<br>
+                Instructor: Er. Bidhya Bhandari
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <!-- ====================================================================
+         SECTION: PUBLICATIONS & PROJECTS
+         ==================================================================== -->
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="publications">
+      <div class="w-100">
+        <h2 class="mb-5">Publications &amp; Projects</h2>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <ul>
+
+              <li class="mb-3">
+                <strong>xv6 Kernel Enhancements: Copy-on-Write Fork &amp; Page Table Isolation</strong>;
+                <u>Dipesh Kharel</u>.
+                MIT 6.S081 Operating Systems Lab Series, 2026. <br>
+                <i class="fa-solid fa-award" style="color: Tomato;"></i>
+                <strong class="text-award">Systems Engineering Highlight</strong><br>
+                <a href="Assets/CV.pdf" target="_blank">
+                  <i class="fa-solid fa-file"></i> paper
+                </a> &nbsp;
+                <a href="https://github.com/Carry-to-1" target="_blank">
+                  <i class="fab fa-github"></i> code
+                </a> &nbsp;
+                <a data-toggle="collapse" href="#xv6-bib" role="button" aria-expanded="false">
+                  <i class="fa-solid fa-quote-left"></i> bibtex
+                </a>
+                <div class="collapse mt-2" id="xv6-bib">
+                  <pre class="p-2 bg-light border rounded" style="font-size: 0.82rem; color: #212529;">@software{kharel2026xv6,
+  author    = {Dipesh Kharel},
+  title     = {xv6 Kernel Enhancements: Copy-on-Write Fork and Page Table Isolation},
+  year      = {2026},
+  url       = {https://github.com/Carry-to-1}
+}</pre>
                 </div>
-            </section>
+              </li>
 
-            <section id="about" class="section">
-                <div class="container">
-                    <h2 class="section-title animate-in">About Me</h2>
-                    <div class="about-content animate-in">
-                        <p>I am a highly motivated individual with a unique background spanning both civil engineering
-                            and
-                            modern information technology. Currently pursuing a Bachelor of Technical Education in
-                            Information Technology at Kathmandu University, I am passionate about leveraging code to
-                            build
-                            dynamic, user-friendly web applications.</p>
-                        <p>My past experience in engineering has provided me with a strong foundation in project
-                            management,
-                            problem-solving, and attention to detail. I am now channeling these skills into my passion
-                            for
-                            web development, with a growing expertise in the MERN stack (MongoDB, Express.js,
-                            React/Next.js,
-                            Node.js) and a drive to create efficient and impactful digital solutions.</p>
-                    </div>
-                </div>
-            </section>
+              <li class="mb-3">
+                <strong>Micro-architectural Side-Channel Analysis: Transient Execution &amp; Cache Attacks</strong>;
+                <u>Dipesh Kharel</u>.
+                Independent Security Research Survey &amp; Benchmarks, 2026. <br>
+                <a href="Assets/CV.pdf" target="_blank">
+                  <i class="fa-solid fa-file"></i> notes &amp; slides
+                </a> &nbsp;
+                <a href="https://github.com/Carry-to-1" target="_blank">
+                  <i class="fab fa-github"></i> code
+                </a>
+              </li>
 
-            <section id="experience" class="section experience-section bg-light">
-                <div class="container">
-                    <h2 class="section-title animate-in">Hands-On Experience</h2>
-                    <div class="timeline-container animate-in">
+              <li class="mb-3">
+                <strong>High-Throughput Concurrent Cache &amp; Memory Allocator</strong>;
+                <u>Dipesh Kharel</u>.
+                Computer Systems Architecture (CMU CS15-213 / UCB CS61C Style), 2025. <br>
+                <a href="https://github.com/Carry-to-1" target="_blank">
+                  <i class="fab fa-github"></i> code
+                </a>
+              </li>
 
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <span class="timeline-year">2023</span>
-                            <div class="timeline-content card">
-                                <span class="mobile-year">2023</span>
-                                <h3>Practical Training: Road & Culvert Survey</h3>
-                                <p class="company duration-info">In-School Training (3 Months)</p>
-                                <ul>
-                                    <li>Conducted comprehensive road alignment and topographical surveys using Leveling
-                                        Instruments and Theodolite.</li>
-                                    <li>Performed Culvert Survey and Estimation to ensure accurate drainage planning and
-                                        quantity takeoff.</li>
-                                    <li>Created detailed Road Estimation reports, contributing to the initial project
-                                        planning phase.</li>
-                                </ul>
-                            </div>
-                        </div>
+            </ul>
+          </div>
+        </div>
 
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <span class="timeline-year">2024</span>
-                            <div class="timeline-content card">
-                                <span class="mobile-year">2024</span>
-                                <h3>Practical Training: Quantity Estimating & Costing</h3>
-                                <p class="company duration-info">In-School Training (3 Months)</p>
-                                <ul>
-                                    <li>Calculated precise material and labor costs through Quantity Estimation for
-                                        various
-                                        building projects.</li>
-                                    <li>Developed skills in efficient resource planning and budgetary control for
-                                        medium-scale structures.</li>
-                                    <li>Role was focused on technical analysis of construction drawings to derive
-                                        accurate
-                                        financial projections.</li>
-                                </ul>
-                            </div>
-                        </div>
+      </div>
+    </section>
 
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <span class="timeline-year">2025</span>
-                            <div class="timeline-content card">
-                                <span class="mobile-year">2025</span>
-                                <h3>Professional OJT: Valuation & Drafting</h3>
-                                <p class="company duration-info">Ranimahal Engineering Consultancy, Butwal (6 Months)
-                                </p>
-                                <ul>
-                                    <li>Conducted property surveys and detailed valuations for residential and
-                                        commercial
-                                        buildings.</li>
-                                    <li>Utilized AutoCAD extensively for architectural drafting and creation of
-                                        professional
-                                        valuation maps.</li>
-                                    <li>Contributed to official reports, performing data analysis to support property
-                                        appraisal decisions.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <hr class="m-0">
 
-            <section id="skills" class="section skills-section">
-                <div class="container">
-                    <h2 class="section-title animate-in">Technical Skills</h2>
-                    <div class="skills-grid animate-in">
+    <!-- ====================================================================
+         SECTION: AWARDS
+         ==================================================================== -->
+    <section class="resume-section-short p-3 p-lg-5 d-flex justify-content-center" id="awards">
+      <div class="w-100">
+        <h2 class="mb-5">Awards &amp; Honors</h2>
 
-                        <div class="skill-card">
-                            <i class="fas fa-code icon-lg"></i>
-                            <h3>Web Development</h3>
-                            <p>HTML, CSS, JavaScript, Next.js, Node.js, Express.js, MongoDB.</p>
-                        </div>
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <ul>
+              <li> Top 3 in Class (Grade 12, GPA 3.50 / 4.00), Technical Secondary Education in Civil Engineering, 2025. </li>
+              <li> Academic Excellence (Grade 10, GPA 3.72 / 4.00), Pharsatikar Secondary School, 2023. </li>
+              <li> Head of OJT Surveying Crew Recognition, Suddhodhan-4, 2023. </li>
+            </ul>
+          </div>
+        </div>
 
-                        <div class="skill-card">
-                            <i class="fas fa-drafting-compass icon-lg"></i>
-                            <h3>Engineering & Design</h3>
-                            <p>AutoCAD (2D), SketchUp, Quantity Estimation, Valuation.</p>
-                        </div>
+      </div>
+    </section>
 
-                        <div class="skill-card">
-                            <i class="fas fa-tools icon-lg"></i>
-                            <h3>Tools & Technologies</h3>
-                            <p>Git, GitHub, VS Code, C, Postman, MS Excel.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <hr class="m-0">
 
-            <section id="contact" class="section contact-section">
-                <div class="container">
-                    <h2 class="section-title animate-in">Get In Touch</h2>
-                    <form class="contact-form animate-in" action="mailto:mr.dipesh333@gmail.com" method="post"
-                        enctype="text/plain" id="emailForm">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="Name" placeholder="Enter your full name" required>
-                        </div>
+    <!-- ====================================================================
+         SECTION: SERVICE
+         ==================================================================== -->
+    <section class="resume-section-short p-3 p-lg-5 d-flex justify-content-center" id="service">
+      <div class="w-100"> 
+        <h2 class="mb-5">Service &amp; Experience</h2>
 
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="Subject"
-                                placeholder="Briefly state your query or proposal" required>
-                        </div>
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <strong>Experience:</strong>
+            <ul>
+              <li> Sub-Engineer, Ranimahal Engineering Consultancy, Tilottama-5 (May 2025 &ndash; Sep 2025) </li>
+              <li> Assistant Sub-Engineer (OJT), Suddhodhan-4, Rupandehi (2024, 3 Months) </li>
+              <li> Road &amp; Culvert Surveyor (Head, OJT), Suddhodhan-4, Rupandehi (2023, 3 Months) </li>
+            </ul>
+            <strong>Community Service:</strong>
+            <ul>
+              <li> Volunteer STEM Tutor, Tilottama &amp; Suddhodhan communities (2020 &ndash; Present) </li>
+            </ul>
+          </div>
+        </div>
 
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="Body" rows="7"
-                                placeholder="Write your detailed message here..." required></textarea>
-                        </div>
+      </div>
+    </section>
 
-                        <button type="submit" class="cta-button submit-button">Send Email</button>
+  </div>
 
-                        <p class="form-note">
-                            This button will open your default email application. You can also email me directly at:
-                            <strong>mr.dipesh333@gmail.com</strong>
-                        </p>
-                    </form>
-                </div>
-            </section>
+  <!-- ======================================================================
+       SCRIPTS (Bootstrap, jQuery & Easing for Smooth Scrolling)
+       ====================================================================== -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <script src="js/main.js"></script>
 
-        </main>
-
-        <footer>
-            <div class="container footer-content">
-                <p>&copy; 2024 Dipesh Kharel. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="#" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="GitHub profile"><i class="fab fa-github"></i></a>
-                    <a href="#" aria-label="Twitter profile"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-        </footer>
-
-        <script src="script.js"></script>
 </body>
 
 </html>
