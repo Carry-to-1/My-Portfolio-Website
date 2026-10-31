@@ -1,7 +1,4 @@
-/*!
- * Resume Template Scripts
- * Identical to MIT CSAIL Mengjia Yan's Homepage (https://people.csail.mit.edu/mengjia/)
- */
+
 (function($) {
   "use strict";
 
