@@ -70,20 +70,3 @@ In `index.html`, locate `<section ... id="news">` and insert a line:
 
 ---
 
-## Free Deployment to GitHub Pages
-
-1. In your terminal inside `File Name`:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial academic homepage"
-   ```
-2. Create a GitHub repo named `<your-username>.github.io`.
-3. Push your code:
-   ```bash
-   git remote add origin https://github.com/<your-username>/<your-username>.github.io.git
-   git branch -M main
-   git push -u origin main
-   ```
-Your website will immediately be accessible worldwide at:
-`https://<your-username>.github.io/`
